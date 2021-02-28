@@ -391,6 +391,7 @@ gdjs.GameCode.condition0IsTrue_0.val = false;
 gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 }if (gdjs.GameCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Centre"), gdjs.GameCode.GDCentreObjects1);
+gdjs.copyArray(runtimeScene.getObjects("ForceField"), gdjs.GameCode.GDForceFieldObjects1);
 gdjs.copyArray(runtimeScene.getObjects("HealthIndicator"), gdjs.GameCode.GDHealthIndicatorObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.GameCode.GDPlayerObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ScoreIndicator"), gdjs.GameCode.GDScoreIndicatorObjects1);
@@ -402,6 +403,9 @@ gdjs.copyArray(runtimeScene.getObjects("ScoreIndicator"), gdjs.GameCode.GDScoreI
 }
 }{for(var i = 0, len = gdjs.GameCode.GDScoreIndicatorObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDScoreIndicatorObjects1[i].setString("Score: " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(0)));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDForceFieldObjects1.length ;i < len;++i) {
+    gdjs.GameCode.GDForceFieldObjects1[i].putAroundObject((gdjs.GameCode.GDCentreObjects1.length !== 0 ? gdjs.GameCode.GDCentreObjects1[0] : null), 0, 0);
 }
 }}
 
