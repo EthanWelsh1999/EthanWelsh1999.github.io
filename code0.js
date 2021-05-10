@@ -1,8 +1,8 @@
 gdjs.MainMenuCode = {};
-gdjs.MainMenuCode.GDTitleObjects1= [];
-gdjs.MainMenuCode.GDTitleObjects2= [];
 gdjs.MainMenuCode.GDControlsExplanationObjects1= [];
 gdjs.MainMenuCode.GDControlsExplanationObjects2= [];
+gdjs.MainMenuCode.GDTitleObjects1= [];
+gdjs.MainMenuCode.GDTitleObjects2= [];
 
 gdjs.MainMenuCode.conditionTrue_0 = {val:false};
 gdjs.MainMenuCode.condition0IsTrue_0 = {val:false};
@@ -33,7 +33,7 @@ gdjs.MainMenuCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runt
 }if ( gdjs.MainMenuCode.condition0IsTrue_0.val ) {
 {
 {gdjs.MainMenuCode.conditionTrue_1 = gdjs.MainMenuCode.condition1IsTrue_0;
-gdjs.MainMenuCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7734140);
+gdjs.MainMenuCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8006644);
 }
 }}
 if (gdjs.MainMenuCode.condition1IsTrue_0.val) {
@@ -54,7 +54,7 @@ gdjs.MainMenuCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runt
 }if ( gdjs.MainMenuCode.condition0IsTrue_0.val ) {
 {
 {gdjs.MainMenuCode.conditionTrue_1 = gdjs.MainMenuCode.condition1IsTrue_0;
-gdjs.MainMenuCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7735180);
+gdjs.MainMenuCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8007668);
 }
 }}
 if (gdjs.MainMenuCode.condition1IsTrue_0.val) {
@@ -65,15 +65,35 @@ if (gdjs.MainMenuCode.condition1IsTrue_0.val) {
 }
 
 
+{
+
+
+gdjs.MainMenuCode.condition0IsTrue_0.val = false;
+{
+gdjs.MainMenuCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.MainMenuCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("ControlsExplanation"), gdjs.MainMenuCode.GDControlsExplanationObjects1);
+gdjs.copyArray(runtimeScene.getObjects("Title"), gdjs.MainMenuCode.GDTitleObjects1);
+{for(var i = 0, len = gdjs.MainMenuCode.GDTitleObjects1.length ;i < len;++i) {
+    gdjs.MainMenuCode.GDTitleObjects1[i].setX(400 - (gdjs.MainMenuCode.GDTitleObjects1[i].getWidth()) / 2);
+}
+}{for(var i = 0, len = gdjs.MainMenuCode.GDControlsExplanationObjects1.length ;i < len;++i) {
+    gdjs.MainMenuCode.GDControlsExplanationObjects1[i].setX(400 - (gdjs.MainMenuCode.GDControlsExplanationObjects1[i].getWidth()) / 2);
+}
+}}
+
+}
+
+
 };
 
 gdjs.MainMenuCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
 
-gdjs.MainMenuCode.GDTitleObjects1.length = 0;
-gdjs.MainMenuCode.GDTitleObjects2.length = 0;
 gdjs.MainMenuCode.GDControlsExplanationObjects1.length = 0;
 gdjs.MainMenuCode.GDControlsExplanationObjects2.length = 0;
+gdjs.MainMenuCode.GDTitleObjects1.length = 0;
+gdjs.MainMenuCode.GDTitleObjects2.length = 0;
 
 gdjs.MainMenuCode.eventsList0(runtimeScene);
 return;
